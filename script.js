@@ -317,7 +317,9 @@ const imageDown = document.querySelector('.back-image-down');
 const fileDown = document.querySelector('.back-file-down');
 const closeBtn1 = document.querySelector('.close-btn1');
 const colorItem1 = document.querySelectorAll('.color-item1');
-
+const fileForm = document.querySelector('.file-form');
+const file = document.querySelector('.file');
+const fileBtn = document.querySelector('.file-btn')
 
 background.onclick = () => {
    if (backModal.style.display !== 'flex'){
@@ -344,7 +346,7 @@ document.onclick = (event) => {
 
 backModal.onclick = (event) => {
    if(event.target.className === 'color-item1'){
-     area.style.backgroundColor = window.getComputedStyle(event.target, null).getPropertyValue("background-color");
+     area.style.background = window.getComputedStyle(event.target, null).getPropertyValue("background-color");
    event.target = event.target.parentNode
    }
 }
@@ -385,3 +387,8 @@ imageDown.onclick = (event) => {
       area.style.background = `url(.${event.target.src.slice(55)})`
    }
 }
+
+file.onchange = function() {
+   let url = URL.createObjectURL(this.files[0]);
+   area.style.background = "url(" + url + ")";
+ }

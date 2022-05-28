@@ -260,7 +260,6 @@ table {
   line-height: 40px;
   z-index: -1;
   background-size: cover;
-  background: url(./images/pexels-philippe-donn-1114690.jpg);
 }
 
 .up-side {
@@ -562,4 +561,25 @@ table {
   display: none;
   justify-content: center;
   align-items: center;
+}
+
+.file-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 400px;
+  background-color: rgb(22, 45, 179);
+  border-radius: 5px;
+  padding-left: 20px;
+  color: white;
+}
+.file::file-selector-button {
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: rgb(251, 255, 17);
 }

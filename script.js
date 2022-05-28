@@ -285,14 +285,16 @@ textColor.onclick = () => {
 closeBtn.onclick = () => {
    textModal.style.display = 'none';
       bg.style.display = 'none';
-      textColor.classList.remove('editor-item-act')
+      textColor.classList.remove('editor-item-act');
 }
 
-document.onclick = () => {
+document.onclick = (event) => {
    if(event.target.className === 'modal-background'){
       textModal.style.display = 'none';
+      backModal.style.display = 'none';
       bg.style.display = 'none';
-      textColor.classList.remove('editor-item-act')
+      textColor.classList.remove('editor-item-act');
+      background.classList.remove('editor-item-act')
    }
 }
 
@@ -303,3 +305,83 @@ textModal.onclick = (event) => {
    }
 }
 
+
+
+const bg1 = document.querySelector('.modal-background1');
+const backModal = document.querySelector('.back-color-modal');
+const colorsBtn = document.querySelector('#colorsBtn');
+const imagesBtn = document.querySelector('#imagesBtn');
+const filesBtn = document.querySelector('#filesBtn');
+const colorDown = document.querySelector('.back-color-down');
+const imageDown = document.querySelector('.back-image-down');
+const fileDown = document.querySelector('.back-file-down');
+const closeBtn1 = document.querySelector('.close-btn1');
+const colorItem1 = document.querySelectorAll('.color-item1');
+
+
+background.onclick = () => {
+   if (backModal.style.display !== 'flex'){
+      backModal.style.display = 'flex';
+      bg1.style.display = 'flex';
+      background.classList.add('editor-item-act')
+   }
+}
+
+closeBtn1.onclick = () => {
+   backModal.style.display = 'none';
+      bg1.style.display = 'none';
+      background.classList.remove('editor-item-act');
+}
+
+document.onclick = (event) => {
+   if(event.target.className === 'modal-background1'){
+      backModal.style.display = 'none';
+      bg1.style.display = 'none';
+      background.classList.remove('editor-item-act')
+   }
+}
+
+
+backModal.onclick = (event) => {
+   if(event.target.className === 'color-item1'){
+     area.style.backgroundColor = window.getComputedStyle(event.target, null).getPropertyValue("background-color");
+   event.target = event.target.parentNode
+   }
+}
+
+colorsBtn.onclick = () => {
+   if (colorDown.style.display !== 'flex'){
+      colorDown.style.display = 'flex';
+      imageDown.style.display = 'none';
+      fileDown.style.display = 'none';
+      colorsBtn.classList.add('back-color-item-act');
+      imagesBtn.classList.remove('back-color-item-act');
+      filesBtn.classList.remove('back-color-item-act');
+   }
+}
+imagesBtn.onclick = () => {
+   if (imageDown.style.display !== 'flex'){
+      imageDown.style.display = 'flex';
+      fileDown.style.display = 'none';
+      colorDown.style.display = 'none';
+      imagesBtn.classList.add('back-color-item-act');
+      colorsBtn.classList.remove('back-color-item-act');
+      filesBtn.classList.remove('back-color-item-act');
+   }
+}
+filesBtn.onclick = () => {
+   if (fileDown.style.display !== 'flex'){
+      fileDown.style.display = 'flex';
+      colorDown.style.display = 'none';
+      imageDown.style.display = 'none';
+      filesBtn.classList.add('back-color-item-act');
+      imagesBtn.classList.remove('back-color-item-act');
+      colorsBtn.classList.remove('back-color-item-act');
+   }
+}
+
+imageDown.onclick = (event) => {
+   if (event.target.className === 'img-back'){
+      area.style.background = `url(.${event.target.src.slice(55)})`
+   }
+}

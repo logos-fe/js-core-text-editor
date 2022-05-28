@@ -14,6 +14,7 @@ const code = document.querySelector('.html-editor-dis');
 const area = document.querySelector('.area');
 const downStyle = document.querySelector('.down-side-style');
 const textEditor = document.querySelector('.text-editor');
+const downSize = document.querySelector('.down-side-size')
 
 const arial = document.querySelector('#arial');
 const georgia = document.querySelector('#georgia');
@@ -21,6 +22,16 @@ const impact = document.querySelector('#impact');
 const tahoma = document.querySelector('#tahoma');
 const times = document.querySelector('#times');
 const verdana = document.querySelector('#verdana');
+
+const twelve = document.querySelector('#twelve');
+const fourteen = document.querySelector('#fourteen');
+const sixteen = document.querySelector('#sixteen');
+const eighteen = document.querySelector('#eighteen');
+const twenty = document.querySelector('#twenty');
+const twentyTwo = document.querySelector('#twenty-two');
+const twentyFive = document.querySelector('#twenty-five');
+const thirty = document.querySelector('#thirty');
+
 
 
 
@@ -115,7 +126,7 @@ textStyle.onclick = () => {
 }
 
 
-const removeFontAct = () => {
+const removeFontStyleAct = () => {
    arial.classList.remove('font-act');
    georgia.classList.remove('font-act');
    impact.classList.remove('font-act');
@@ -126,44 +137,122 @@ const removeFontAct = () => {
 arial.onclick = () => {
    if (area.style.fontFamily !== 'Arial, Helvetica, sans-serif'){
       area.style.fontFamily = 'Arial, Helvetica, sans-serif';
-      removeFontAct();
+      removeFontStyleAct();
       arial.classList.add('font-act')
    }
 };
 georgia.onclick = () => {
    if (area.style.fontFamily !== 'Georgia, "Times New Roman", Times, serif'){
       area.style.fontFamily = 'Georgia, "Times New Roman", Times, serif';
-      removeFontAct();
+      removeFontStyleAct();
       georgia.classList.add('font-act')
    }
 }
 impact.onclick = () => {
    if (area.style.fontFamily !== 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif'){
       area.style.fontFamily = 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif';
-      removeFontAct();
+      removeFontStyleAct();
       impact.classList.add('font-act')
    }
 }
 tahoma.onclick = () => {
    if (area.style.fontFamily !== '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'){
       area.style.fontFamily = '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
-      removeFontAct();
+      removeFontStyleAct();
       tahoma.classList.add('font-act')
    }
 }
 times.onclick = () => {
    if (area.style.fontFamily !== '"Times New Roman", Times, serif'){
       area.style.fontFamily = '"Times New Roman", Times, serif';
-      removeFontAct();
+      removeFontStyleAct();
       times.classList.add('font-act')
    }
 }
 verdana.onclick = () => {
    if (area.style.fontFamily !== 'Verdana, Geneva, Tahoma, sans-serif'){
       area.style.fontFamily = 'Verdana, Geneva, Tahoma, sans-serif';
-      removeFontAct();
+      removeFontStyleAct();
       verdana.classList.add('font-act')
    }
 }
 
 
+
+textSize.onclick = () => {
+   if (downSize.style.display !== 'flex'){
+      textEditor.style.marginTop = '400px';
+      downSize.style.display = 'flex';
+      textSize.classList.add('editor-item-act');
+   } else {
+      textEditor.style.marginTop = '0';
+      downSize.style.display = 'none';
+      textSize.classList.remove('editor-item-act');
+   }
+}
+const removeFontSizeAct = () => {
+   twelve.classList.remove('font-act');
+   fourteen.classList.remove('font-act');
+   sixteen.classList.remove('font-act');
+   eighteen.classList.remove('font-act');
+   twenty.classList.remove('font-act');
+   twentyTwo.classList.remove('font-act');
+   twentyFive.classList.remove('font-act');
+   thirty.classList.remove('font-act');
+}
+twelve.onclick = () => {
+   if (area.style.fontSize !== '12px'){
+      area.style.fontSize = '12px';
+      removeFontSizeAct();
+      twelve.classList.add('font-act')
+   }
+};
+fourteen.onclick = () => {
+   if (area.style.fontSize !== '14px'){
+      area.style.fontSize = '14px';
+      removeFontSizeAct();
+      fourteen.classList.add('font-act')
+   }
+};
+sixteen.onclick = () => {
+   if (area.style.fontSize !== '16px'){
+      area.style.fontSize = '16px';
+      removeFontSizeAct();
+      sixteen.classList.add('font-act')
+   }
+};
+eighteen.onclick = () => {
+   if (area.style.fontSize !== '18px'){
+      area.style.fontSize = '18px';
+      removeFontSizeAct();
+      eighteen.classList.add('font-act')
+   }
+};
+twenty.onclick = () => {
+   if (area.style.fontSize !== '20px'){
+      area.style.fontSize = '20px';
+      removeFontSizeAct();
+      twenty.classList.add('font-act')
+   }
+};
+twentyTwo.onclick = () => {
+   if (area.style.fontSize !== '22px'){
+      area.style.fontSize = '22px';
+      removeFontSizeAct();
+      twentyTwo.classList.add('font-act')
+   }
+};
+twentyFive.onclick = () => {
+   if (area.style.fontSize !== '25px'){
+      area.style.fontSize = '25px';
+      removeFontSizeAct();
+      twentyFive.classList.add('font-act')
+   }
+};
+thirty.onclick = () => {
+   if (area.style.fontSize !== '30px'){
+      area.style.fontSize = '30px';
+      removeFontSizeAct();
+      thirty.classList.add('font-act')
+   }
+};

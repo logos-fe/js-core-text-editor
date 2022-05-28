@@ -315,3 +315,91 @@ table {
 .verdana {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.down-side-size {
+  height: 400px;
+  width: 99%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-size: 20px;
+  z-index: 1;
+}
+#twelve {
+  font-size: 12px;
+}
+#fourteen {
+  font-size: 14px;
+}
+#sixteen {
+  font-size: 16px;
+}
+#eighteen {
+  font-size: 18px;
+}
+#twenty {
+  font-size: 20px;
+}
+#twenty-two {
+  font-size: 22px;
+}
+#twenty-five {
+  font-size: 25px;
+}
+#thirty {
+  font-size: 30px;
+}
+
+.modal-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-color-modal {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 800px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.text-color-up {
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 15px;
+  border-bottom: 1px solid grey;
+}
+
+.text-color-down {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 10px;
+}
+.color-item {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  border-radius: 10px;
+}

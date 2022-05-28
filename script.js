@@ -16,21 +16,12 @@ const downStyle = document.querySelector('.down-side-style');
 const textEditor = document.querySelector('.text-editor');
 const downSize = document.querySelector('.down-side-size')
 
-const arial = document.querySelector('#arial');
-const georgia = document.querySelector('#georgia');
-const impact = document.querySelector('#impact');
-const tahoma = document.querySelector('#tahoma');
-const times = document.querySelector('#times');
-const verdana = document.querySelector('#verdana');
 
-const twelve = document.querySelector('#twelve');
-const fourteen = document.querySelector('#fourteen');
-const sixteen = document.querySelector('#sixteen');
-const eighteen = document.querySelector('#eighteen');
-const twenty = document.querySelector('#twenty');
-const twentyTwo = document.querySelector('#twenty-two');
-const twentyFive = document.querySelector('#twenty-five');
-const thirty = document.querySelector('#thirty');
+
+
+
+
+
 
 
 
@@ -125,6 +116,12 @@ textStyle.onclick = () => {
    }
 }
 
+const arial = document.querySelector('#arial');
+const georgia = document.querySelector('#georgia');
+const impact = document.querySelector('#impact');
+const tahoma = document.querySelector('#tahoma');
+const times = document.querySelector('#times');
+const verdana = document.querySelector('#verdana');
 
 const removeFontStyleAct = () => {
    arial.classList.remove('font-act');
@@ -190,6 +187,17 @@ textSize.onclick = () => {
       textSize.classList.remove('editor-item-act');
    }
 }
+
+const twelve = document.querySelector('#twelve');
+const fourteen = document.querySelector('#fourteen');
+const sixteen = document.querySelector('#sixteen');
+const eighteen = document.querySelector('#eighteen');
+const twenty = document.querySelector('#twenty');
+const twentyTwo = document.querySelector('#twenty-two');
+const twentyFive = document.querySelector('#twenty-five');
+const thirty = document.querySelector('#thirty');
+
+
 const removeFontSizeAct = () => {
    twelve.classList.remove('font-act');
    fourteen.classList.remove('font-act');
@@ -256,3 +264,42 @@ thirty.onclick = () => {
       thirty.classList.add('font-act')
    }
 };
+
+
+
+
+const bg = document.querySelector('.modal-background');
+const textModal = document.querySelector('.text-color-modal');
+const closeBtn = document.querySelector('.close-btn');
+const colorItem = document.querySelectorAll('.color-item');
+
+
+textColor.onclick = () => {
+   if (textModal.style.display !== 'flex'){
+      textModal.style.display = 'flex';
+      bg.style.display = 'flex';
+      textColor.classList.add('editor-item-act')
+   }
+}
+
+closeBtn.onclick = () => {
+   textModal.style.display = 'none';
+      bg.style.display = 'none';
+      textColor.classList.remove('editor-item-act')
+}
+
+document.onclick = () => {
+   if(event.target.className === 'modal-background'){
+      textModal.style.display = 'none';
+      bg.style.display = 'none';
+      textColor.classList.remove('editor-item-act')
+   }
+}
+
+textModal.onclick = (event) => {
+   if(event.target.className === 'color-item'){
+     area.style.color = window.getComputedStyle(event.target, null).getPropertyValue("background-color");
+   event.target = event.target.parentNode
+   }
+}
+

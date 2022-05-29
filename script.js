@@ -9,7 +9,7 @@ const textStyle = document.querySelector('#text-style');
 const textSize = document.querySelector('#text-size');
 const textColor = document.querySelector('#text-color');
 const background = document.querySelector('#background');
-const signUp = document.querySelector('.sign-up');
+const signIn = document.querySelector('.sign-in');
 const code = document.querySelector('.html-editor-dis');
 const area = document.querySelector('.area');
 const downStyle = document.querySelector('.down-side-style');
@@ -291,10 +291,8 @@ closeBtn.onclick = () => {
 document.onclick = (event) => {
    if(event.target.className === 'modal-background'){
       textModal.style.display = 'none';
-      backModal.style.display = 'none';
       bg.style.display = 'none';
       textColor.classList.remove('editor-item-act');
-      background.classList.remove('editor-item-act')
    }
 }
 
@@ -342,7 +340,13 @@ document.onclick = (event) => {
       background.classList.remove('editor-item-act')
    }
 }
-
+document.onclick = (event) => {
+   if(event.target.className === 'modal-background'){
+      textModal.style.display = 'none';
+      bg.style.display = 'none';
+      textColor.classList.remove('editor-item-act');
+   }
+}
 
 backModal.onclick = (event) => {
    if(event.target.className === 'color-item1'){
@@ -392,3 +396,70 @@ file.onchange = function() {
    let url = URL.createObjectURL(this.files[0]);
    area.style.background = "url(" + url + ")";
  }
+
+
+
+
+const bg2 = document.querySelector('.modal-background2');
+const signInModal = document.querySelector('.sign-in-modal');
+const signInForm = document.querySelector('.sign-in-form');
+const login = document.querySelector('#login');
+const password = document.querySelector('#password');
+const signInText = document.querySelector('.sign-in-text');
+const signInBtn = document.querySelector('.sign-in-btn');
+const lockImg = document.querySelector('#lock-logo')
+
+
+signIn.onclick = () => {
+   if (signInModal.style.display !== 'flex'){
+      bg2.style.display = 'flex';
+      signInModal.style.display = 'flex';
+      signIn.classList.add('editor-item-act');
+   }
+}
+
+document.onclick = (event) => {
+   if(event.target.className === 'modal-background2'){
+      signInModal.style.display = 'none';
+      bg2.style.display = 'none';
+      signInModal.style.display = 'none';
+      signIn.classList.remove('editor-item-act');
+   }
+}
+
+signInBtn.onclick = () => {
+   if (login.value === ''){
+      login.style.border = '1px solid red';
+      signInText.textContent = 'Value is empty';
+   } else {
+      login.style.border = '1px solid grey';
+      signInText.textContent = '';
+   }
+}
+signInBtn.onclick = () => {
+   if (password.value === ' '){
+      password.style.border = '1px solid red';
+      signInText.textContent = 'Value is empty';
+   } else {
+      password.style.border = '1px solid grey';
+      signInText.textContent = '';
+   }
+}
+
+
+   signInBtn.onclick = () => {
+   if (login.value !== 'admin' || password.value !== 'admin'){
+      login.style.border = '1px solid red';
+      password.style.border = '1px solid red';
+      signInText.textContent = 'Please check your login or password';
+   } else {
+      login.style.border = '1px solid green';
+      password.style.border = '1px solid green';
+      signInText.textContent = '';
+      signInModal.style.display = 'none';
+      bg2.style.display = 'none';
+      signInModal.style.display = 'none';
+      signIn.classList.remove('editor-item-act');
+      lockImg.src = './images/lock_open_FILL0_wght400_GRAD0_opsz48.svg'
+   }
+}

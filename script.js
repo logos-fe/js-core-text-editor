@@ -108,7 +108,9 @@ textStyle.onclick = () => {
    if (downStyle.style.display !== 'flex'){
       textEditor.style.marginTop = '300px';
       downStyle.style.display = 'flex';
+      downSize.style.display = 'none';
       textStyle.classList.add('editor-item-act');
+      textSize.classList.remove('editor-item-act');
    } else {
       textEditor.style.marginTop = '0';
       downStyle.style.display = 'none';
@@ -179,8 +181,10 @@ verdana.onclick = () => {
 textSize.onclick = () => {
    if (downSize.style.display !== 'flex'){
       textEditor.style.marginTop = '400px';
+      downStyle.style.display = 'none';
       downSize.style.display = 'flex';
       textSize.classList.add('editor-item-act');
+      textStyle.classList.remove('editor-item-act');
    } else {
       textEditor.style.marginTop = '0';
       downSize.style.display = 'none';

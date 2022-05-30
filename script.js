@@ -450,6 +450,8 @@ signInBtn.onclick = () => {
    }
 }
 
+const htmlEditor = document.querySelector('.html-editor-dis');
+const htmlWindow = document.querySelector('.html-editor-window');
 
    signInBtn.onclick = () => {
    if (login.value !== 'admin' || password.value !== 'admin'){
@@ -464,6 +466,27 @@ signInBtn.onclick = () => {
       bg2.style.display = 'none';
       signInModal.style.display = 'none';
       signIn.classList.remove('editor-item-act');
-      lockImg.src = './images/lock_open_FILL0_wght400_GRAD0_opsz48.svg'
+      lockImg.src = './images/lock_open_FILL0_wght400_GRAD0_opsz48.svg';
+      htmlEditor.classList.add('html-editor');
+      htmlEditor.classList.remove('html-editor-dis')
    }
+}
+
+
+
+const areaHTML = document.querySelector('.area-html');
+const areaTextHTML = document.querySelector('.area-html-text');
+const save = document.querySelector('#save');
+areaTextHTML.textContent = area.innerHTML;
+
+
+code.onclick = () => {
+   if (code.className === 'html-editor'){
+      htmlWindow.style.display = 'flex';
+   }
+}
+save.onclick = () => {
+   area.innerHTML = areaTextHTML.value;
+   console.log(area.innerHTML);
+   htmlWindow.style.display = 'none';
 }

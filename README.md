@@ -1,1 +1,1 @@
-# js-core-text-editor
+https://srtmaks.github.io/js-core-text-editor/
